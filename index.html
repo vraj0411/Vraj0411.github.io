@@ -60,14 +60,22 @@
         }
 
         .nav-logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
-        .nav-logo span { color: var(--accent); }
+        .nav-logo svg { height: 32px; width: auto; }
+
+        .nav-logo-text {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+        }
 
         .nav-links { display: flex; gap: 2rem; list-style: none; }
 
@@ -758,7 +766,38 @@
 
 <!-- Navigation -->
 <nav>
-    <a href="#" class="nav-logo">vraj<span>.</span>dev</a>
+    <a href="#" class="nav-logo">
+        <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#818cf8"/>
+                    <stop offset="100%" style="stop-color:#06b6d4"/>
+                </linearGradient>
+                <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#6366f1"/>
+                    <stop offset="100%" style="stop-color:#06b6d4"/>
+                </linearGradient>
+            </defs>
+            <!-- Neural network nodes - representing AI/ML -->
+            <circle cx="8" cy="10" r="2.5" fill="url(#nodeGrad)" opacity="0.6"/>
+            <circle cx="8" cy="20" r="2.5" fill="url(#nodeGrad)" opacity="0.8"/>
+            <circle cx="8" cy="30" r="2.5" fill="url(#nodeGrad)" opacity="0.6"/>
+            <circle cx="22" cy="15" r="3" fill="url(#nodeGrad)" opacity="0.9"/>
+            <circle cx="22" cy="25" r="3" fill="url(#nodeGrad)"/>
+            <circle cx="36" cy="20" r="3.5" fill="url(#nodeGrad)"/>
+            <!-- Neural connections -->
+            <line x1="10.5" y1="10" x2="19" y2="15" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.4"/>
+            <line x1="10.5" y1="20" x2="19" y2="15" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.4"/>
+            <line x1="10.5" y1="20" x2="19" y2="25" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.4"/>
+            <line x1="10.5" y1="30" x2="19" y2="25" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.4"/>
+            <line x1="25" y1="15" x2="32.5" y2="20" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.5"/>
+            <line x1="25" y1="25" x2="32.5" y2="20" stroke="url(#logoGrad)" stroke-width="0.8" opacity="0.5"/>
+            <!-- VM text -->
+            <text x="46" y="27" font-family="Inter, sans-serif" font-weight="800" font-size="20" fill="url(#logoGrad)" letter-spacing="-1">VM</text>
+            <!-- Decorative bracket -->
+            <text x="72" y="27" font-family="JetBrains Mono, monospace" font-weight="400" font-size="14" fill="#6a6a80" opacity="0.5">_ai</text>
+        </svg>
+    </a>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
     <ul class="nav-links">
         <li><a href="#about">About</a></li>
