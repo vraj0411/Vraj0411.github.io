@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vraj Modi | AI/ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #16161f;
+            --bg-card-hover: #1c1c28;
+            --border: #232333;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a8;
+            --text-muted: #6a6a80;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e;
+            --green-glow: rgba(34, 197, 94, 0.15);
+            --orange: #f59e0b;
+            --cyan: #06b6d4;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── Scrollbar ── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .nav-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--green-glow);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 100px;
+            font-size: 0.78rem;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--accent-light), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.3rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .hero-link.primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .hero-link.primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .hero-link.secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .hero-link.secondary:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--text-muted);
+            transform: translateY(-1px);
+        }
+
+        .hero-link svg { width: 16px; height: 16px; }
+
+        /* ── Stats Bar ── */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 700px;
+        }
+
+        .stat {
+            background: var(--bg-card);
+            padding: 1.3rem 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .stat-value.accent { color: var(--accent-light); }
+        .stat-value.green { color: var(--green); }
+        .stat-value.orange { color: var(--orange); }
+        .stat-value.cyan { color: var(--cyan); }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        /* ── Sections ── */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ── Skills ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(99, 102, 241, 0.08);
+        }
+
+        .skill-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .skill-icon.purple { background: rgba(99, 102, 241, 0.15); color: var(--accent-light); }
+        .skill-icon.green { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+        .skill-icon.cyan { background: rgba(6, 182, 212, 0.15); color: var(--cyan); }
+        .skill-icon.orange { background: rgba(245, 158, 11, 0.15); color: var(--orange); }
+
+        .skill-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-tag {
+            padding: 0.3rem 0.7rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ── Experience ── */
+        .timeline { position: relative; }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 56px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 12px;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            background: var(--bg-primary);
+            z-index: 1;
+        }
+
+        .timeline-item:first-child .timeline-dot {
+            background: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-role {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--accent-light);
+            background: var(--accent-glow);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .timeline-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-bullets strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ── Projects ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--cyan));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 50px rgba(99, 102, 241, 0.1);
+        }
+
+        .project-card:hover::before { opacity: 1; }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .project-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .project-badge.hf {
+            background: rgba(255, 213, 0, 0.1);
+            color: #ffd500;
+            border: 1px solid rgba(255, 213, 0, 0.2);
+        }
+
+        .project-badge.gh {
+            background: rgba(255,255,255,0.06);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-highlights {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-highlights li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-highlights li::before {
+            content: '>';
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .project-stack span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            color: var(--text-muted);
+        }
+
+        /* ── Publication ── */
+        .pub-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pub-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent), var(--cyan));
+        }
+
+        .pub-venue {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .pub-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        .pub-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--green-glow);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--green);
+            font-weight: 500;
+        }
+
+        /* ── Education ── */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.8rem;
+            transition: all 0.3s;
+        }
+
+        .edu-card:hover {
+            border-color: var(--border);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .edu-degree {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-school {
+            font-size: 0.88rem;
+            color: var(--accent-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-detail {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ── Contact ── */
+        .contact-section {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .contact-section .section-desc {
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.1);
+        }
+
+        .contact-card svg { width: 18px; height: 18px; color: var(--accent-light); flex-shrink: 0; }
+
+        .contact-card span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        footer a { color: var(--accent-light); text-decoration: none; }
+
+        /* ── Animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--bg-secondary); flex-direction: column; padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; letter-spacing: -1px; }
+            section { padding: 3rem 1.5rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="#" class="nav-logo">vraj<span>.</span>dev</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Available for opportunities</div>
+        <h1>
+            Hi, I'm <span class="gradient">Vraj Modi</span>.<br>
+            I build AI that matters.
+        </h1>
+        <p class="hero-subtitle">
+            AI/ML Engineer and researcher. I pre-trained a 500M-parameter LLM from scratch, published peer-reviewed research in medical imaging, and ship production AI systems on GCP.
+        </p>
+        <div class="hero-links">
+            <a href="mailto:vrajmodi0411@gmail.com" class="hero-link primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                Get in Touch
+            </a>
+            <a href="https://github.com/Vraj0411" target="_blank" class="hero-link secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+            </a>
+            <a href="https://linkedin.com/in/vraj-modi" target="_blank" class="hero-link secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://huggingface.co/Vraj0411" target="_blank" class="hero-link secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M10.7 4.6c-.3-.4-.8-.6-1.3-.5-.9.1-1.6.5-2.1 1.2-.5.6-.7 1.4-.6 2.2 0 .2.1.4.2.6l.2.2c.1 0 .2 0 .3-.1.1-.1.1-.2.1-.3 0-.6.2-1.2.5-1.7.3-.4.8-.7 1.3-.8.3 0 .5.1.7.3.1.1.2.1.3.1s.2-.1.2-.2c.2-.3.2-.7 0-1zm2.6 0c.3-.4.8-.6 1.3-.5.9.1 1.6.5 2.1 1.2.5.6.7 1.4.6 2.2 0 .2-.1.4-.2.6l-.2.2c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3 0-.6-.2-1.2-.5-1.7-.3-.4-.8-.7-1.3-.8-.3 0-.5.1-.7.3-.1.1-.2.1-.3.1s-.2-.1-.2-.2c-.2-.3-.2-.7 0-1zM12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22.5C6.2 22.5 1.5 17.8 1.5 12S6.2 1.5 12 1.5 22.5 6.2 22.5 12 17.8 22.5 12 22.5zm4.8-8.3c-.4-.2-.8 0-1 .4-.7 1.4-2.2 2.3-3.8 2.3s-3.1-.9-3.8-2.3c-.2-.4-.6-.5-1-.4-.4.2-.5.6-.4 1 1 1.9 3 3.1 5.2 3.1s4.2-1.2 5.2-3.1c.2-.4 0-.8-.4-1z"/></svg>
+                Hugging Face
+            </a>
+        </div>
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value accent">500M</div>
+                <div class="stat-label">LLM Params</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value green">95.78%</div>
+                <div class="stat-label">Model Accuracy</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value orange">35%</div>
+                <div class="stat-label">Latency Cut</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value cyan">40%</div>
+                <div class="stat-label">Cost Saved</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- About -->
+<section id="about" class="fade-in">
+    <div class="section-label">// about</div>
+    <h2 class="section-title">Background</h2>
+    <p class="section-desc" style="max-width: 800px; line-height: 1.8;">
+        Machine Learning Engineer and AI Researcher with an M.Tech from NIT Goa and a peer-reviewed publication at MICAD 2025. I independently designed and pre-trained a 500M-parameter LLM using a Mixture-of-Experts architecture from scratch, advancing research in Generative AI, NLP, and compute-efficient deep learning. I've published and clinically validated an AI diagnostic system achieving 95.78% accuracy against radiologist ground truth across 400 images. Currently building production AI systems at a healthtech startup, delivering measurable impact: 35% API latency reduction and 40% infrastructure cost savings through end-to-end pipeline design and GCP deployment.
+    </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- Skills -->
+<section id="skills" class="fade-in">
+    <div class="section-label">// skills</div>
+    <h2 class="section-title">Technical Arsenal</h2>
+    <p class="section-desc">The tools and technologies I use to bring AI research from paper to production.</p>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-icon purple">&#9881;</div>
+                <h3>ML & Deep Learning</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">HuggingFace</span>
+                <span class="skill-tag">ONNX</span>
+                <span class="skill-tag">Transfer Learning</span>
+                <span class="skill-tag">Feature Engineering</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-icon green">&#9733;</div>
+                <h3>GenAI & LLMs</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">Transformers</span>
+                <span class="skill-tag">MoE</span>
+                <span class="skill-tag">Fine-tuning</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">FAISS</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">Prompt Engineering</span>
+                <span class="skill-tag">BPE Tokenizer</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-icon cyan">&#9677;</div>
+                <h3>NLP & Computer Vision</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">Text Classification</span>
+                <span class="skill-tag">Tokenization</span>
+                <span class="skill-tag">ResNet / CNNs</span>
+                <span class="skill-tag">OpenCV</span>
+                <span class="skill-tag">Medical Imaging</span>
+                <span class="skill-tag">DICOM</span>
+                <span class="skill-tag">Image Segmentation</span>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-card-header">
+                <div class="skill-icon orange">&#9729;</div>
+                <h3>Cloud & MLOps</h3>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">GCP</span>
+                <span class="skill-tag">Cloud Run</span>
+                <span class="skill-tag">Vertex AI</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Streamlit</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Experience -->
+<section id="experience" class="fade-in">
+    <div class="section-label">// experience</div>
+    <h2 class="section-title">Where I've Worked</h2>
+    <p class="section-desc">Building AI systems from research to production.</p>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+                <div class="timeline-role">AI Engineer</div>
+                <div class="timeline-date">Nov 2025 &ndash; Present</div>
+            </div>
+            <div class="timeline-company">Aaroogya International &middot; Pre-seed Healthtech &middot; Remote, India</div>
+            <ul class="timeline-bullets">
+                <li>Designed and deployed a <strong>production LLM inference backend</strong> on GCP (Cloud Run, Cloud Build, IAM) with automated CI/CD as the sole infrastructure engineer.</li>
+                <li>Built end-to-end <strong>data pipelines</strong> for clinical text ingestion and serving, supporting real-time inference with <strong>sub-600ms latency</strong>.</li>
+                <li>Migrated 5 legacy Heroku workflows to GCP, cutting API latency from <strong>820ms to 530ms (-35%)</strong> and infrastructure costs by <strong>40%</strong>.</li>
+                <li>Implemented <strong>model evaluation frameworks</strong> to track LLM output quality; validated against clinical benchmarks with physicians.</li>
+                <li>Built backend REST APIs integrating GenAI features with <strong>IAM-based access control</strong> across 3 microservices.</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+                <div class="timeline-role">Deep Learning Research Engineer</div>
+                <div class="timeline-date">Apr 2024 &ndash; Jul 2025</div>
+            </div>
+            <div class="timeline-company">National Institute of Technology Goa &middot; M.Tech Thesis &middot; Goa, India</div>
+            <ul class="timeline-bullets">
+                <li>Led <strong>15-month end-to-end deep learning research</strong> on orthopedic X-ray analysis, resulting in a <strong>peer-reviewed publication at MICAD 2025</strong>.</li>
+                <li>Achieved <strong>95.78% test accuracy</strong> (Precision: 0.96, Recall: 0.95, F1: 0.955) on varus/valgus deformity classification with ResNet-50.</li>
+                <li>Designed automated pipeline for <strong>DICOM ingestion, preprocessing, augmentation, and inference</strong>; verified against radiologist ground truth.</li>
+                <li>Replaced a 3-step manual clinical workflow with a <strong>single automated deep learning inference pass</strong>; deployed with 5 orthopedic surgeons.</li>
+                <li>Delivered a <strong>Streamlit clinical dashboard</strong> generating Ilizarov correction plans from X-ray input in under 3 seconds.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Projects -->
+<section id="projects" class="fade-in">
+    <div class="section-label">// projects</div>
+    <h2 class="section-title">Featured Work</h2>
+    <p class="section-desc">Solo research projects pushing the boundaries of what's possible with limited compute.</p>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-card-header">
+                <h3>MedBharat-1</h3>
+                <span class="project-badge hf">Hugging Face</span>
+            </div>
+            <p class="project-desc">
+                A 500M-parameter medical LLM pre-trained from scratch for Indian healthcare. Solo research project in domain-specific deep learning under a limited compute budget.
+            </p>
+            <ul class="project-highlights">
+                <li>Custom transformer with 6 domain-specific MoE expert networks and top-2 gated routing</li>
+                <li>Trained over 200 GPU hours using Medical Sparse Attention, RoPE, SwiGLU, and RMSNorm</li>
+                <li>Built a 48,000-token bilingual BPE tokenizer covering English, Hindi, and 12,000+ medical terms</li>
+                <li>100% clinical reasoning accuracy; all weights, configs, and code open-sourced</li>
+            </ul>
+            <div class="project-stack">
+                <span>PyTorch</span>
+                <span>MoE</span>
+                <span>RoPE</span>
+                <span>SwiGLU</span>
+                <span>BPE</span>
+                <span>Curriculum Learning</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-card-header">
+                <h3>OrthoX-AI</h3>
+                <span class="project-badge gh">GitHub</span>
+            </div>
+            <p class="project-desc">
+                Automated orthopedic X-ray analysis system for bone deformity detection. Complete pipeline from DICOM ingestion to clinical evaluation.
+            </p>
+            <ul class="project-highlights">
+                <li>End-to-end CV pipeline: DICOM ingestion, preprocessing, ResNet-50 classifier, OpenCV post-processing</li>
+                <li>95.78% accuracy on held-out test set (N = 400), validated against radiologist ground truth</li>
+                <li>Automated bone axis detection and CORA localisation replacing manual clinical workflows</li>
+            </ul>
+            <div class="project-stack">
+                <span>PyTorch</span>
+                <span>ResNet-50</span>
+                <span>OpenCV</span>
+                <span>Streamlit</span>
+                <span>DICOM</span>
+                <span>Transfer Learning</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Publications -->
+<section id="publications" class="fade-in">
+    <div class="section-label">// publications</div>
+    <h2 class="section-title">Research</h2>
+    <div class="pub-card">
+        <div class="pub-venue">MICAD 2025 &middot; Medical Imaging & Computer-Aided Diagnosis &middot; Peer-Reviewed</div>
+        <div class="pub-title">OrthoX-AI: Automated X-ray Alignment and Correction System (Ilizarov Technique)</div>
+        <p class="pub-desc">
+            Deep learning and machine learning system for orthopedic deformity detection. Clinically validated by 5 practicing orthopedic surgeons on a held-out cohort of 400 images.
+        </p>
+        <span class="pub-tag">Peer-Reviewed &middot; Clinically Validated</span>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Education -->
+<section id="education" class="fade-in">
+    <div class="section-label">// education</div>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="edu-grid">
+        <div class="edu-card">
+            <div class="edu-degree">M.Tech &ndash; Computer Science & Engineering</div>
+            <div class="edu-school">National Institute of Technology Goa (NIT Goa)</div>
+            <div class="edu-date">Jul 2023 &ndash; Jul 2025 &middot; Goa, India</div>
+            <div class="edu-detail">
+                Thesis: AI-Based X-ray Deformity Detection using Deep Learning<br>
+                Coursework: Deep Learning, ML, NLP, Computer Vision, AI in Healthcare, Data Mining
+            </div>
+        </div>
+        <div class="edu-card">
+            <div class="edu-degree">B.Tech &ndash; Computer Science & Engineering</div>
+            <div class="edu-school">Parul University</div>
+            <div class="edu-date">Aug 2019 &ndash; Mar 2023 &middot; Vadodara, India</div>
+            <div class="edu-detail">
+                Foundation in computer science, algorithms, and software engineering principles.
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Contact -->
+<section id="contact" class="contact-section fade-in">
+    <div class="section-label">// contact</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-desc">Open to AI/ML engineering roles, research collaborations, and interesting conversations.</p>
+    <div class="contact-grid">
+        <a href="mailto:vrajmodi0411@gmail.com" class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            <span>vrajmodi0411@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/vraj-modi" target="_blank" class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/Vraj0411" target="_blank" class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+        </a>
+        <a href="https://huggingface.co/Vraj0411" target="_blank" class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M10.7 4.6c-.3-.4-.8-.6-1.3-.5-.9.1-1.6.5-2.1 1.2-.5.6-.7 1.4-.6 2.2 0 .2.1.4.2.6l.2.2c.1 0 .2 0 .3-.1.1-.1.1-.2.1-.3 0-.6.2-1.2.5-1.7.3-.4.8-.7 1.3-.8.3 0 .5.1.7.3.1.1.2.1.3.1s.2-.1.2-.2c.2-.3.2-.7 0-1zm2.6 0c.3-.4.8-.6 1.3-.5.9.1 1.6.5 2.1 1.2.5.6.7 1.4.6 2.2 0 .2-.1.4-.2.6l-.2.2c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3 0-.6-.2-1.2-.5-1.7-.3-.4-.8-.7-1.3-.8-.3 0-.5.1-.7.3-.1.1-.2.1-.3.1s-.2-.1-.2-.2c-.2-.3-.2-.7 0-1zM12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22.5C6.2 22.5 1.5 17.8 1.5 12S6.2 1.5 12 1.5 22.5 6.2 22.5 12 17.8 22.5 12 22.5zm4.8-8.3c-.4-.2-.8 0-1 .4-.7 1.4-2.2 2.3-3.8 2.3s-3.1-.9-3.8-2.3c-.2-.4-.6-.5-1-.4-.4.2-.5.6-.4 1 1 1.9 3 3.1 5.2 3.1s4.2-1.2 5.2-3.1c.2-.4 0-.8-.4-1z"/></svg>
+            <span>Hugging Face</span>
+        </a>
+        <a href="tel:+919016195519" class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+            <span>+91 9016195519</span>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>Built by Vraj Modi &middot; &copy; 2025</p>
+</footer>
+
+<script>
+    // Scroll-based fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Active nav link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const top = section.offsetTop - 100;
+            if (scrollY >= top) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.style.color = link.getAttribute('href') === '#' + current
+                ? 'var(--text-primary)' : '';
+        });
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('open');
+        });
+    });
+</script>
+
+</body>
+</html>
