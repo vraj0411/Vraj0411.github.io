@@ -736,6 +736,20 @@
 
         footer a { color: var(--accent-light); text-decoration: none; }
 
+        .visitor-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .visitor-counter img {
+            border-radius: 4px;
+        }
+
         /* ── Animations ── */
         .fade-in {
             opacity: 0;
@@ -1118,6 +1132,9 @@
 <!-- Footer -->
 <footer>
     <p>Built by Vraj Modi &middot; &copy; 2025</p>
+    <div class="visitor-counter">
+        <a href="https://hits.sh/vraj0411.github.io/"><img src="https://hits.sh/vraj0411.github.io.svg?color=indigo" alt="Hits"></a>
+    </div>
 </footer>
 
 <script>
