@@ -468,7 +468,7 @@
         /* ── Projects ── */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 1.5rem;
         }
 
@@ -533,6 +533,12 @@
             background: rgba(255,255,255,0.06);
             color: var(--text-secondary);
             border: 1px solid var(--border);
+        }
+
+        .project-badge.live {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--green);
+            border: 1px solid rgba(34, 197, 94, 0.2);
         }
 
         .project-desc {
@@ -852,6 +858,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M10.7 4.6c-.3-.4-.8-.6-1.3-.5-.9.1-1.6.5-2.1 1.2-.5.6-.7 1.4-.6 2.2 0 .2.1.4.2.6l.2.2c.1 0 .2 0 .3-.1.1-.1.1-.2.1-.3 0-.6.2-1.2.5-1.7.3-.4.8-.7 1.3-.8.3 0 .5.1.7.3.1.1.2.1.3.1s.2-.1.2-.2c.2-.3.2-.7 0-1zm2.6 0c.3-.4.8-.6 1.3-.5.9.1 1.6.5 2.1 1.2.5.6.7 1.4.6 2.2 0 .2-.1.4-.2.6l-.2.2c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3 0-.6-.2-1.2-.5-1.7-.3-.4-.8-.7-1.3-.8-.3 0-.5.1-.7.3-.1.1-.2.1-.3.1s-.2-.1-.2-.2c-.2-.3-.2-.7 0-1zM12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22.5C6.2 22.5 1.5 17.8 1.5 12S6.2 1.5 12 1.5 22.5 6.2 22.5 12 17.8 22.5 12 22.5zm4.8-8.3c-.4-.2-.8 0-1 .4-.7 1.4-2.2 2.3-3.8 2.3s-3.1-.9-3.8-2.3c-.2-.4-.6-.5-1-.4-.4.2-.5.6-.4 1 1 1.9 3 3.1 5.2 3.1s4.2-1.2 5.2-3.1c.2-.4 0-.8-.4-1z"/></svg>
                 Hugging Face
             </a>
+            <a href="https://niftymind.in" target="_blank" class="hero-link secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" /></svg>
+                NiftyMind
+            </a>
         </div>
         <div class="stats-bar">
             <div class="stat">
@@ -1041,8 +1051,36 @@
 <section id="projects" class="fade-in">
     <div class="section-label">// projects</div>
     <h2 class="section-title">Featured Work</h2>
-    <p class="section-desc">Solo research projects in domain-specific AI &mdash; architectures transferable to financial and healthcare NLP.</p>
+    <p class="section-desc">Production AI systems and solo research projects across finance and healthcare domains.</p>
     <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-card-header">
+                <h3>NiftyMind</h3>
+                <div style="display: flex; gap: 0.4rem;">
+                    <a href="https://niftymind.in" target="_blank" class="project-badge live" style="text-decoration: none;">Live</a>
+                    <a href="https://github.com/vraj0411/NiftyMind" target="_blank" class="project-badge gh" style="text-decoration: none;">GitHub</a>
+                </div>
+            </div>
+            <p class="project-desc">
+                AI-powered stock analysis platform for Indian markets. Full-stack Next.js application integrating real-time market data via Upstox API with LLM-driven fundamental and technical analysis, price predictions, and portfolio tracking.
+            </p>
+            <ul class="project-highlights">
+                <li>Real-time market data, candlestick charts, and technical indicators for NSE/BSE stocks</li>
+                <li>AI-powered stock analysis reports using LLM with streaming responses</li>
+                <li>Portfolio tracking, watchlist management, and market movers dashboard</li>
+                <li>Deployed on Oracle Cloud with PostgreSQL, JWT auth, and Cloudflare protection</li>
+            </ul>
+            <div class="project-stack">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Prisma</span>
+                <span>PostgreSQL</span>
+                <span>Groq LLM</span>
+                <span>Upstox API</span>
+                <span>Tailwind CSS</span>
+                <span>Oracle Cloud</span>
+            </div>
+        </div>
         <div class="project-card">
             <div class="project-card-header">
                 <h3>MedBharat-1</h3>
@@ -1157,6 +1195,10 @@
         <a href="https://huggingface.co/Vraj0411" target="_blank" class="contact-card">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M10.7 4.6c-.3-.4-.8-.6-1.3-.5-.9.1-1.6.5-2.1 1.2-.5.6-.7 1.4-.6 2.2 0 .2.1.4.2.6l.2.2c.1 0 .2 0 .3-.1.1-.1.1-.2.1-.3 0-.6.2-1.2.5-1.7.3-.4.8-.7 1.3-.8.3 0 .5.1.7.3.1.1.2.1.3.1s.2-.1.2-.2c.2-.3.2-.7 0-1zm2.6 0c.3-.4.8-.6 1.3-.5.9.1 1.6.5 2.1 1.2.5.6.7 1.4.6 2.2 0 .2-.1.4-.2.6l-.2.2c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3 0-.6-.2-1.2-.5-1.7-.3-.4-.8-.7-1.3-.8-.3 0-.5.1-.7.3-.1.1-.2.1-.3.1s-.2-.1-.2-.2c-.2-.3-.2-.7 0-1zM12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22.5C6.2 22.5 1.5 17.8 1.5 12S6.2 1.5 12 1.5 22.5 6.2 22.5 12 17.8 22.5 12 22.5zm4.8-8.3c-.4-.2-.8 0-1 .4-.7 1.4-2.2 2.3-3.8 2.3s-3.1-.9-3.8-2.3c-.2-.4-.6-.5-1-.4-.4.2-.5.6-.4 1 1 1.9 3 3.1 5.2 3.1s4.2-1.2 5.2-3.1c.2-.4 0-.8-.4-1z"/></svg>
             <span>Hugging Face</span>
+        </a>
+        <a href="https://niftymind.in" target="_blank" class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" /></svg>
+            <span>NiftyMind</span>
         </a>
         <a href="tel:+919016195519" class="contact-card">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
