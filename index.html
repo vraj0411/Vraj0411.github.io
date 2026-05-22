@@ -480,6 +480,14 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+        }
+
+        a.project-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-radius: 16px;
         }
 
         .project-card::before {
@@ -1053,12 +1061,13 @@
     <h2 class="section-title">Featured Work</h2>
     <p class="section-desc">Production AI systems and solo research projects across finance and healthcare domains.</p>
     <div class="projects-grid">
+        <a href="http://80.225.204.125" target="_blank" class="project-card-link">
         <div class="project-card">
             <div class="project-card-header">
                 <h3>NiftyMind</h3>
                 <div style="display: flex; gap: 0.4rem;">
-                    <a href="https://niftymind.in" target="_blank" class="project-badge live" style="text-decoration: none;">Live</a>
-                    <a href="https://github.com/vraj0411/NiftyMind" target="_blank" class="project-badge gh" style="text-decoration: none;">GitHub</a>
+                    <span class="project-badge live">Live</span>
+                    <span class="project-badge gh">GitHub</span>
                 </div>
             </div>
             <p class="project-desc">
@@ -1081,6 +1090,8 @@
                 <span>Oracle Cloud</span>
             </div>
         </div>
+        </a>
+        <a href="https://github.com/vraj0411/MedBharat-1" target="_blank" class="project-card-link">
         <div class="project-card">
             <div class="project-card-header">
                 <h3>MedBharat-1</h3>
@@ -1104,6 +1115,8 @@
                 <span>Curriculum Learning</span>
             </div>
         </div>
+        </a>
+        <a href="https://github.com/vraj0411/Orthox-AI" target="_blank" class="project-card-link">
         <div class="project-card">
             <div class="project-card-header">
                 <h3>OrthoX-AI</h3>
@@ -1126,6 +1139,7 @@
                 <span>Transfer Learning</span>
             </div>
         </div>
+        </a>
     </div>
 </section>
 
