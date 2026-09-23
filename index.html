@@ -844,10 +844,10 @@
         <div class="hero-badge">Available for opportunities</div>
         <h1>
             Hi, I'm <span class="gradient">Vraj Modi</span>.<br>
-            AI for Finance & Healthcare.
+            AI/ML Engineer · Pretraining & RAG · Healthtech | Fintech
         </h1>
         <p class="hero-subtitle">
-            I build and ship AI systems across healthcare and finance &mdash; from pre-training LLMs from scratch to deploying production inference on GCP. Published researcher in medical imaging, builder of live fintech products, and always looking for the next hard problem at the intersection of AI and regulated industries.
+I build production AI systems at the intersection of healthcare and finance. From pre-training a 500M-parameter LLM from scratch to deploying low-latency inference on GCP I own the full stack. Published at MICAD 2025, builder of NiftyMind, and drawn to hard problems where getting AI right actually matters.
         </p>
         <div class="hero-links">
             <a href="mailto:vrajmodi0411@gmail.com" class="hero-link primary">
@@ -899,8 +899,7 @@
     <div class="section-label">// about</div>
     <h2 class="section-title">Background</h2>
     <p class="section-desc" style="max-width: 800px; line-height: 1.8;">
-        I build AI systems that work in the real world &mdash; not just in notebooks. With an M.Tech from NIT Goa and a peer-reviewed publication at MICAD 2025, my work spans the full stack of applied machine learning: from pre-training a 500M-parameter MoE LLM from scratch, to deploying low-latency inference backends on GCP, to publishing clinically validated diagnostic systems that surgeons actually use. I care about the entire lifecycle &mdash; data pipelines, model architecture, cloud infrastructure, evaluation, and governance &mdash; and I've shipped production systems across both healthcare and finance. On the research side, I've worked deeply with computer vision, NLP, and deep learning for medical imaging. On the engineering side, I've migrated legacy stacks to GCP, cut API latencies by 35%, and reduced infrastructure costs by 40% at an early-stage startup. More recently, I've been exploring quantitative finance &mdash; time-series forecasting, risk modelling, and NLP over earnings calls and regulatory filings &mdash; and built NiftyMind, a live AI-powered stock analysis platform for Indian markets. I'm drawn to hard problems at the intersection of AI and regulated industries, where getting it right matters.
-    </p>
+I don't prototype - I ship. With an M.Tech from NIT Goa and a peer-reviewed publication at MICAD 2025, I've pre-trained a 500M-parameter MoE LLM from scratch, deployed low-latency inference backends on GCP, and built clinically validated diagnostic systems that orthopedic surgeons use in the operating room all as a solo or lead engineer. At Aaroogya International, I own the entire AI/ML stack: data pipelines, model evaluation, cloud infrastructure, CI/CD, and governance, cutting API latency by 35% and infrastructure costs by 40%. More recently I've moved into quantitative finance, building NiftyMind a live AI-powered stock analysis platform for Indian markets going deep on time series forecasting, risk modelling, and NLP over earnings calls and regulatory filings. I care about the full lifecycle, not just the model. I'm drawn to regulated industries precisely because the bar is higher and getting it wrong has real consequences. 
 </section>
 
 <div class="divider"></div>
@@ -969,6 +968,7 @@
             </div>
             <div class="skill-tags">
                 <span class="skill-tag">GCP</span>
+                <span class="skill-tag">AWS</span>
                 <span class="skill-tag">Cloud Run</span>
                 <span class="skill-tag">Vertex AI</span>
                 <span class="skill-tag">Docker</span>
@@ -1024,7 +1024,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-header">
                 <div class="timeline-role">AI Engineer</div>
-                <div class="timeline-date">Nov 2025 &ndash; Present</div>
+                <div class="timeline-date">Nov 2025 &ndash; Jan 2026</div>
             </div>
             <div class="timeline-company">Aaroogya International &middot; Pre-seed Healthtech &middot; Remote, India</div>
             <ul class="timeline-bullets">
@@ -1061,6 +1061,79 @@
     <h2 class="section-title">Featured Work</h2>
     <p class="section-desc">Production AI systems and solo research projects across finance and healthcare domains.</p>
     <div class="projects-grid">
+        <!-- 1. Atrosphere -->
+        <a href="https://github.com/vraj0411" target="_blank" class="project-card-link">
+        <div class="project-card">
+            <div class="project-card-header">
+                <h3>Credit Line Assistant</h3>
+                <div style="display: flex; gap: 0.4rem;">
+                    <span class="project-badge gh">GitHub</span>
+                    <span class="project-badge" style="background: rgba(245,158,11,0.1); color: var(--orange); border: 1px solid rgba(245,158,11,0.2); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 6px; white-space: nowrap;">GenAI · NBFC</span>
+                </div>
+            </div>
+            <p class="project-desc">
+                AI-powered field credit assistant for NBFC loan origination that eliminates the stress of borrowers having to visit a bank branch or gather documents manually. The field agent conducts the entire intake at the borrower's doorstep — collecting information, checking documents, and assessing eligibility on the spot — then the system automatically generates a structured Credit Appraisal Memo (CAM).
+            </p>
+            <ul class="project-highlights">
+                <li>Borrowers never need to visit a branch — agent handles full document collection and eligibility check at their location</li>
+                <li>Real-time KYC and document checklist generation tells the agent exactly what is needed, preventing repeat visits</li>
+                <li>Eligibility-gap detection flags missing or insufficient documents during the conversation, not after submission</li>
+                <li>Conversational borrower intake across 5 loan categories with Indian financial-value extraction (lakh/crore)</li>
+                <li>RAG layer over 16 policy documents with semantic retrieval, re-ranking, and source-cited answers</li>
+                <li>Automated 7-section CAM covering applicant info, income, KYC, risk flags, and recommendation</li>
+                <li>Geofencing with GPS-stamped lat/long + timestamp verifies the agent was physically at the borrower's site during intake — tamper-evident field audit trail</li>
+                <li>12-language browser voice input and agent location audit trail for field-verified records</li>
+                <li>Dual dashboards for field agents and Heads of Agent teams</li>
+            </ul>
+            <div class="project-stack">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>SQLAlchemy</span>
+                <span>ChromaDB</span>
+                <span>RAG</span>
+                <span>Groq / Llama 3.3</span>
+                <span>SQLite</span>
+                <span>Web Speech API</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+        </a>
+        <!-- 2. DataLens -->
+        <a href="https://github.com/vraj0411" target="_blank" class="project-card-link">
+        <div class="project-card">
+            <div class="project-card-header">
+                <h3>DataLens</h3>
+                <div style="display: flex; gap: 0.4rem;">
+                    <span class="project-badge gh">GitHub</span>
+                    <span class="project-badge" style="background: rgba(6,182,212,0.1); color: var(--cyan); border: 1px solid rgba(6,182,212,0.2); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 6px; white-space: nowrap;">Data Agent</span>
+                </div>
+            </div>
+            <p class="project-desc">
+                Conversational AI data agent that lets users explore structured business data through natural language. The agent generates and executes SQL, summarises results, and renders interactive visualisations — no SQL knowledge required.
+            </p>
+            <ul class="project-highlights">
+                <li>LangGraph state machine orchestrating classification, planning, execution, verification, and audit nodes</li>
+                <li>Hybrid dense + BM25 retrieval for PDF document search with source-level citations to page spans and table rows</li>
+                <li>Read-only SQL safety controls (SELECT/WITH only) with table allowlists and PAN/Aadhaar structural verification</li>
+                <li>Sample dataset: 156 QSR locations across India, 10,000 days of POS sales data with interactive Plotly charts</li>
+                <li>Multi-workspace management, cross-workspace data selection, and admin dashboard</li>
+            </ul>
+            <div class="project-stack">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>LangGraph</span>
+                <span>Anthropic Tool Use</span>
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>MongoDB Atlas Vector</span>
+                <span>DuckDB</span>
+                <span>BM25</span>
+                <span>Plotly</span>
+                <span>OpenAI Embeddings</span>
+            </div>
+        </div>
+        </a>
+        <!-- 3. NiftyMind -->
         <a href="http://80.225.204.125" target="_blank" class="project-card-link">
         <div class="project-card">
             <div class="project-card-header">
@@ -1091,6 +1164,7 @@
             </div>
         </div>
         </a>
+        <!-- 4. MedBharat-1 -->
         <a href="https://github.com/vraj0411/MedBharat-1" target="_blank" class="project-card-link">
         <div class="project-card">
             <div class="project-card-header">
@@ -1116,6 +1190,7 @@
             </div>
         </div>
         </a>
+        <!-- 5. OrthoX-AI -->
         <a href="https://github.com/vraj0411/Orthox-AI" target="_blank" class="project-card-link">
         <div class="project-card">
             <div class="project-card-header">
@@ -1149,13 +1224,67 @@
 <section id="publications" class="fade-in">
     <div class="section-label">// publications</div>
     <h2 class="section-title">Research</h2>
+    <p class="section-desc">Peer-reviewed work at the intersection of deep learning and clinical orthopedics.</p>
     <div class="pub-card">
-        <div class="pub-venue">MICAD 2025 &middot; Medical Imaging & Computer-Aided Diagnosis &middot; Peer-Reviewed</div>
-        <div class="pub-title">OrthoX-AI: Automated X-ray Alignment and Correction System (Ilizarov Technique)</div>
-        <p class="pub-desc">
-            Deep learning and machine learning system for orthopedic deformity detection. Clinically validated by 5 practicing orthopedic surgeons on a held-out cohort of 400 images.
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+                <div class="pub-venue">MICAD 2025 &middot; International Conference on Medical Imaging &amp; Computer-Aided Diagnosis &middot; Springer LNEE vol. 1520</div>
+                <div class="pub-title">OrthoX-AI: Automated X-Ray Alignment and Correction System [Ilizarov Technique]</div>
+            </div>
+            <a href="https://doi.org/10.1007/978-981-95-7425-4_18" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.5rem 1rem; background: var(--accent-glow); border: 1px solid rgba(99,102,241,0.35); border-radius: 8px; text-decoration: none; color: var(--accent-light); font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; white-space: nowrap; transition: all 0.2s; flex-shrink: 0;" onmouseover="this.style.background='rgba(99,102,241,0.25)'" onmouseout="this.style.background='var(--accent-glow)'">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                DOI &rarr; Springer
+            </a>
+        </div>
+
+        <!-- Authors & metadata row -->
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 1.2rem;">
+            <span style="font-size: 0.82rem; color: var(--text-secondary);">Vraj Alpeshkumar Modi &middot; Veena Thenkanidiyoor &middot; Mehul J. Khatri</span>
+            <span style="width: 1px; height: 14px; background: var(--border);"></span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-muted);">pp 193&ndash;205</span>
+            <span style="width: 1px; height: 14px; background: var(--border);"></span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-muted);">Published: 15 August 2026</span>
+            <span style="width: 1px; height: 14px; background: var(--border);"></span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-muted);">NIT Goa &middot; Amdavad Orthopedic Center</span>
+        </div>
+
+        <!-- Abstract -->
+        <p class="pub-desc" style="margin-bottom: 1.2rem;">
+            Manual assessment of lower-limb alignment from X-rays is a time-consuming, expertise-driven process central to orthopedic diagnosis and deformity correction. OrthoX-AI proposes a fully automated deep learning pipeline for evaluating lower-limb malalignment through anatomical angle prediction. The system integrates a CNN-based keypoint detection model to localise hip, knee, and ankle joints, followed by an angle regression model predicting eight clinically relevant angles — mLPFA, aMPFA, mLDFA, aLDFA, mMPTA, aMPTA, mLDTA, and aLDTA. Predicted angles are analysed by a CORA-based rule engine to classify the limb as normal, varus, or valgus. Evaluated on a self-curated dataset of 2,000+ annotated X-rays, the method achieves a mean absolute error of ~5° in angle prediction and over 90% classification accuracy. The system is deployable as an ONNX-exportable clinical tool for orthopedic imaging workflows.
         </p>
-        <span class="pub-tag">Peer-Reviewed &middot; Clinically Validated</span>
+
+        <!-- Key results grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.4rem;">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-align: center;">
+                <div style="font-size: 1.4rem; font-weight: 700; color: var(--green); letter-spacing: -0.5px;">&gt;90%</div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 0.2rem;">Classification Accuracy</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-align: center;">
+                <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-light); letter-spacing: -0.5px;">~5°</div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 0.2rem;">Mean Angle Error (MAE)</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-align: center;">
+                <div style="font-size: 1.4rem; font-weight: 700; color: var(--orange); letter-spacing: -0.5px;">2,000+</div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 0.2rem;">Annotated X-rays</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-align: center;">
+                <div style="font-size: 1.4rem; font-weight: 700; color: var(--cyan); letter-spacing: -0.5px;">8</div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 0.2rem;">Clinical Angles Predicted</div>
+            </div>
+        </div>
+
+        <!-- Keywords & tags row -->
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+            <span class="pub-tag">Peer-Reviewed · Springer LNEE</span>
+            <span class="pub-tag" style="background: rgba(6,182,212,0.08); border-color: rgba(6,182,212,0.2); color: var(--cyan);">ONNX-Deployable</span>
+            <span class="pub-tag" style="background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.2); color: var(--orange);">Clinically Validated</span>
+            <div style="margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.2rem 0.55rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 5px; color: var(--text-muted);">Lower Limb Deformity</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.2rem 0.55rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 5px; color: var(--text-muted);">Anatomical Angle Prediction</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.2rem 0.55rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 5px; color: var(--text-muted);">Rule-Based Classification</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.2rem 0.55rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 5px; color: var(--text-muted);">Malalignment Test (MAT)</span>
+            </div>
+        </div>
     </div>
 </section>
 
